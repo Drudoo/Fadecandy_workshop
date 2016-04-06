@@ -97,18 +97,18 @@ If you don't have a USB cable with header pins on you can use a regular 5V ~2A p
 ## Making your own sketch
 Lets try and set up an empty sketch using the template below:
 
-		OPC opc;
+	OPC opc;
 
-		void setup() {
-  			size(500, 500, P3D);
+	void setup() {
+		size(500, 500, P3D);
 
-	  		opc = new OPC(this, "127.0.0.1", 7890);
-	  		opc.ledGrid8x8(0, width/2, height/2, height / 16.0, 0, false);
-		}
+  		opc = new OPC(this, "127.0.0.1", 7890);
+  		opc.ledGrid8x8(0, width/2, height/2, height / 16.0, 0, false);
+	}
 
-		void draw() {
-		  background(0);
-		}
+	void draw() {
+	  background(0);
+	}
 
 Here the important part is the ledGrid8x8 line. First we have a 0, this indicated that we have connected the led matrix to connector 0 on the fadecandy. Next we need to define the center of the matrix. This is done using `width/2` and `height/2`. We also need to define the spacing between each LED. The spacing is approximately one LED in size, so we can use `height/16`. The next 0 is the rotation. Since we just use the default rotation we dont need to change this. `false` means that all the LEDs point in the same direction.
 
@@ -117,11 +117,11 @@ If we run this nothing will really happen except we get a black screen with 8x8 
 We can change the individual colors using `setPixel(index, color)` in the draw function.
 
 
-		opc.setPixel(0, color(255,0,0));
+	opc.setPixel(0, color(255,0,0));
 
 The above code changes the color of the first pixel to red.
 
-		opc.setPixel(10, color(0,255,0));
+	opc.setPixel(10, color(0,255,0));
 
 The above code changes the 11th pixel to green.
 
@@ -129,8 +129,12 @@ This should make sense and be easy to work with.
 
 Unfortunately each pixel does have a bit of color bleeding to nearby pixels, this can be prevented using a printed separator or another time of plate in front.
 
-## Another example
+## Webserver
 
 It is easy to test and identify different fadecandy's using the port the fadecandy is set up to. Just go to `localhost:port` and play around
 
-		http://localhost:7890
+	http://localhost:7890
+	
+Here is you you can identify the Fadecandy if multiple ones are connected or test all the LEDs. There is also an option to configure the server using JSON, but that’s not something I want to get into now. 
+
+![](http://drudoo.com/Stuff/online.png)

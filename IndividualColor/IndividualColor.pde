@@ -23,11 +23,6 @@ void draw() {
     opc.setPixel(i+8*6, color(100,100,100));
     opc.setPixel(i+8*7, color(200,200,200));
   }
-  
-  
-  //opc.setPixel(5, color(255,0,0));
-    //opc.setPixel(25, color(0,255,0));
-    //opc.setPixel(40, color(0,0,255));
 
   opc.writePixels(); 
 

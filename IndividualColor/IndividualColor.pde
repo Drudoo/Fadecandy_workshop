@@ -1,5 +1,5 @@
 OPC opc;
-    color c = color(0,0,255);
+color c = color(0,0,255);
 
 void setup() {
   size(500, 500, P3D);

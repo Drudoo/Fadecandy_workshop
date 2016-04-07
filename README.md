@@ -148,3 +148,8 @@ It is also possible to connect LED stips of various length to the fadecandy. It 
 First we have the index, since this is the first row of pixels we just use 0 as index. Here we just say the length is 64 pixels, with a midpoint the same as the grid. The spacing is a bit different, but with 64 pixels `width/70` should work. `0` is again the rotation and false specify to direction. 
 
 It's straightforward to change individual pixels and in order to use images as source for the pattern, the fadecandy examples are a good source of information. 
+
+## 3D Printed covers
+
+![](http://drudoo.com/Stuff/Picture1.png)
+![](http://drudoo.com/Stuff/Picture2.png)

@@ -138,3 +138,13 @@ It is easy to test and identify different fadecandy's using the port the fadecan
 Here is you you can identify the Fadecandy if multiple ones are connected or test all the LEDs. There is also an option to configure the server using JSON, but that’s not something I want to get into now. 
 
 ![](http://drudoo.com/Stuff/online.png)
+
+## LED Strip
+
+It is also possible to connect LED stips of various length to the fadecandy. It is basically the same as using a matrix but to initialize the stip we are using:
+
+	opc.ledStrip(0, 64, width/2, height/2, width / 70.0, 0, false);
+	
+First we have the index, since this is the first row of pixels we just use 0 as index. Here we just say the length is 64 pixels, with a midpoint the same as the grid. The spacing is a bit different, but with 64 pixels `width/70` should work. `0` is again the rotation and false specify to direction. 
+
+It's straightforward to change individual pixels and in order to use images as source for the pattern, the fadecandy examples are a good source of information. 
